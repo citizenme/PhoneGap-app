@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Persistent toolbars - jQuery Mobile Demos</title>
+	<link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="../css/themes/default/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" href="../_assets/css/jqm-demos.css">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+
+	<script>
+		
+		// Update the contents of the toolbars
+		$( document ).on( "pageshow", "[data-role='page']", function() {
+			// Each of the four pages in this demo has a data-title attribute
+			// which value is equal to the text of the nav button
+			// For example, on first page: <div data-role="page" data-title="Info">
+			var current = $( this ).jqmData( "title" );
+			// Change the heading
+			$( "[data-role='header'] h1" ).text( current );
+			// Remove active class from nav buttons
+			$( "[data-role='navbar'] a.ui-btn-active" ).removeClass( "ui-btn-active" );
+			// Add active class to current nav button
+			$( "[data-role='navbar'] a" ).each(function() {
+				if ( $( this ).text() === current ) {
+					$( this ).addClass( "ui-btn-active" );
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+    <div data-role="header" data-position="fixed" data-theme="b">
+		<!--<a href="../toolbar/" data-rel="back" class="ui-btn ui-btn-left ui-alt-icon ui-nodisc-icon ui-corner-all ui-btn-icon-notext ui-icon-carat-l">Back</a>-->
+        <h1>Info</h1>
+    </div><!-- /header -->
+
+	<div data-role="page" data-title="Info" class="jqm-demos" data-theme="b">
+
+	    <div role="main" class="ui-content jqm-content jqm-fullwidth" data-theme="b">
+            
+			<div id="container"></div>
+            <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.1.min.js"></script>
+            <script defer="defer">
+              var lastDist = 0;
+              var startScale = 1;
+        
+              function getDistance(p1, p2) {
+                return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));
+              }
+              var stage = new Kinetic.Stage({
+                container: 'container',
+                width: 320,
+                height: 300,
+                draggable: true,
+                x: 0,
+                y: 0,
+                offset: [0, 0]
+              });
+        
+              var layer = new Kinetic.Layer();
+        
+              var triangle = new Kinetic.RegularPolygon({
+                x: 10,
+                y: stage.getHeight() / 2,
+                sides: 3,
+                radius: 80,
+                fill: 'green',
+                stroke: 'black',
+                strokeWidth: 4
+              });
+        
+              var circle = new Kinetic.Circle({
+                x: 30,
+                y: stage.getHeight() / 2,
+                radius: 70,
+                fill: 'red',
+                stroke: 'black',
+                strokeWidth: 4
+              });
+        
+              stage.getContent().addEventListener('touchmove', function(evt) {
+                var touch1 = evt.touches[0];
+                var touch2 = evt.touches[1];
+        
+                if(touch1 && touch2) {
+                  var dist = getDistance({
+                    x: touch1.clientX,
+                    y: touch1.clientY
+                  }, {
+                    x: touch2.clientX,
+                    y: touch2.clientY
+                  });
+        
+                  if(!lastDist) {
+                    lastDist = dist;
+                  }
+        
+                  var scale = stage.getScale().x * dist / lastDist;
+        
+                  stage.setScale(scale);
+                  stage.draw();
+                  lastDist = dist;
+                }
+              }, false);
+        
+              stage.getContent().addEventListener('touchend', function() {
+                lastDist = 0;
+              }, false);
+        
+              layer.add(triangle);
+              layer.add(circle);
+              stage.add(layer);
+        
+            </script>
+
+		</div><!-- /content -->
+
+	</div><!-- /page -->
+
+	<div data-role="footer" data-position="fixed" data-theme="b">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="index.html" data-prefetch="true" data-transition="fade">Info</a></li>
+				<li><a href="page-b.html" data-prefetch="true" data-transition="fade">Friends</a></li>
+				<li><a href="page-c.html" data-prefetch="true" data-transition="fade">Albums</a></li>
+				<li><a href="page-d.html" data-prefetch="true" data-transition="fade">Emails</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</body>
+</html>
