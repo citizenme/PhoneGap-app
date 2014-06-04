@@ -24,6 +24,12 @@ Tech - typescript_webstorm:
 
 Check how TypeScript code generation works in the WebStorm IDE and how TypeScript can call external JavaScript functions, libraries etc.
 
+Tech - facebookjs:
+------------------
+
+Proof of concept (POC) investigation using Facebook's JavaScript API with
+Cordova without using any native plugins on the desire platform. Work successfully on iOS, Android and FireFox OS.
+
 References:
 ------------
    http://typescriptlang.org

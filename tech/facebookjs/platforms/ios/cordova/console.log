@@ -1,0 +1,92 @@
+2014-06-04 16:55:46.839 FacebookJS[88079:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-04 16:55:47.094 FacebookJS[88079:70b] Unlimited access to network resources
+2014-06-04 16:55:47.097 FacebookJS[88079:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-04 16:55:47.501 FacebookJS[88079:70b] Resetting plugins due to page load.
+2014-06-04 16:55:49.384 FacebookJS[88079:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1935E7AC-671E-47AA-A11D-7EE457C4877A/FacebookJS.app/www/index.html
+2014-06-04 16:56:09.898 FacebookJS[88079:70b] Resetting plugins due to page load.
+2014-06-04 16:56:13.113 FacebookJS[88079:70b] Finished load of: https://www.facebook.com/dialog/oauth?client_id=YOUR_FB_APP_ID&redirect_uri=https://www.facebook.com/connect/login_success.html&response_type=token&display=popup&scope=email
+2014-06-04 17:02:06.900 FacebookJS[88339:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-04 17:02:06.910 FacebookJS[88339:70b] Unlimited access to network resources
+2014-06-04 17:02:06.915 FacebookJS[88339:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-04 17:02:07.070 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:02:07.221 FacebookJS[88339:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1935E7AC-671E-47AA-A11D-7EE457C4877A/FacebookJS.app/www/index.html
+2014-06-04 17:02:19.937 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:02:22.617 FacebookJS[88339:70b] Failed to load webpage with error: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-04 17:02:22.618 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:02:25.225 FacebookJS[88339:70b] Finished load of: https://m.facebook.com/login.php?skip_api_login=1&api_key=259408170927977&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv2.0%2Fdialog%2Foauth%3Fredirect_uri%3Dhttps%253A%252F%252Fwww.facebook.com%252Fconnect%252Flogin_success.html%26scope%3Demail%26response_type%3Dtoken%26client_id%3D259408170927977%26ret%3Dlogin&cancel_uri=https%3A%2F%2Fwww.facebook.com%2Fconnect%2Flogin_success.html%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%23_%3D_&display=touch&_rdr
+2014-06-04 17:03:03.784 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:03:06.877 FacebookJS[88339:70b] Finished load of: https://m.facebook.com/login.php?auth_token=d2504ebe832d64d5ac836950649f071d&skip_api_login=1&signed_next=1&next=https%3A%2F%2Fm.facebook.com%2Fv2.0%2Fdialog%2Foauth%3Fredirect_uri%3Dhttps%253A%252F%252Fwww.facebook.com%252Fconnect%252Flogin_success.html%26scope%3Demail%26response_type%3Dtoken%26client_id%3D259408170927977%26ret%3Dlogin&refsrc=https%3A%2F%2Fm.facebook.com%2Flogin.php&refid=9&e=1348092&email=lenniedg%40gmail.com&li=sDSPU6jN-izOuDz8ghyFdyBA&_rdr
+2014-06-04 17:03:13.131 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:03:15.812 FacebookJS[88339:70b] Finished load of: https://m.facebook.com/v2.0/dialog/oauth?redirect_uri=https%3A%2F%2Fwww.facebook.com%2Fconnect%2Flogin_success.html&scope=email&response_type=token&client_id=259408170927977&ret=login&ext=1401897715&hash=AeYfN6twKU4KvzGS&refsrc=https%3A%2F%2Fm.facebook.com%2Flogin.php&refid=9&_rdr#_=_
+2014-06-04 17:03:16.497 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:03:18.695 FacebookJS[88339:70b] Finished load of: https://m.facebook.com/v2.0/dialog/oauth/read
+2014-06-04 17:03:18.697 FacebookJS[88339:70b] Resetting plugins due to page load.
+2014-06-04 17:03:19.750 FacebookJS[88339:70b] Finished load of: https://www.facebook.com/connect/login_success.html#access_token=CAADr7ivhR2kBAC9yQY4KFxhZBKJ8Tw2KTz6dfhcRVHn93MZBmAshkn7ztZCaZBwQeF5IyqSUZBnPTZB07BZBScL5XT8QV6srFnHOYajrMZAmNAWvlVgVxuJkFG9usZBk8e3K65gAD6PNkwQDiEj4A7TevdZATl2QmOAeLagEc08sapugWmjYTccAT1&expires_in=5183999
+Terminating in response to SpringBoard's termination.
+2014-06-04 17:08:20.815 FacebookJS[88593:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-04 17:08:20.822 FacebookJS[88593:70b] Unlimited access to network resources
+2014-06-04 17:08:20.826 FacebookJS[88593:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-04 17:08:20.972 FacebookJS[88593:70b] Resetting plugins due to page load.
+2014-06-04 17:08:21.083 FacebookJS[88593:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1935E7AC-671E-47AA-A11D-7EE457C4877A/FacebookJS.app/www/index.html
+2014-06-04 17:08:22.595 FacebookJS[88593:70b] Resetting plugins due to page load.
+2014-06-04 17:08:24.187 FacebookJS[88593:70b] Finished load of: https://www.facebook.com/connect/login_success.html#access_token=CAADr7ivhR2kBALfGbR9456ZAddXumCOtZColfMFwk6d7iZA8JE9EzJZBZCNktB1go7LKRnIZCn9rCBmvZB2yAHWNHMKbG0tmSV5QjErvVzOyNMWjNmZCr7OD6HbYAYrFtov0zIDQg4Gz7zZCaGlfz9a74DPBGsZByyjKDuWu9sncNxmlaERCcZAWO6n&expires_in=5183694
+2014-06-04 17:09:21.988 FacebookJS[88722:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-04 17:09:21.998 FacebookJS[88722:70b] Unlimited access to network resources
+2014-06-04 17:09:22.001 FacebookJS[88722:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-04 17:09:22.109 FacebookJS[88722:70b] Resetting plugins due to page load.
+2014-06-04 17:09:22.174 FacebookJS[88722:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/1935E7AC-671E-47AA-A11D-7EE457C4877A/FacebookJS.app/www/index.html
+2014-06-04 17:09:23.931 FacebookJS[88722:70b] Resetting plugins due to page load.
+2014-06-04 17:09:26.195 FacebookJS[88722:70b] Finished load of: https://m.facebook.com/v2.0/dialog/oauth?redirect_uri=https%3A%2F%2Fwww.facebook.com%2Fconnect%2Flogin_success.html&scope=email&response_type=token&client_id=259408170927977
+2014-06-04 17:09:44.417 FacebookJS[88871:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-04 17:09:44.424 FacebookJS[88871:70b] Unlimited access to network resources
+2014-06-04 17:09:44.427 FacebookJS[88871:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-04 17:09:44.659 FacebookJS[88871:70b] Resetting plugins due to page load.
+2014-06-04 17:09:44.704 FacebookJS[88871:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/AE6839AA-4A31-4380-B4BE-FE66B809D065/FacebookJS.app/www/index.html
+Terminating in response to SpringBoard's termination.
+2014-06-04 17:10:57.225 FacebookJS[89036:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-04 17:10:57.236 FacebookJS[89036:70b] Unlimited access to network resources
+2014-06-04 17:10:57.239 FacebookJS[89036:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-04 17:10:57.373 FacebookJS[89036:70b] Resetting plugins due to page load.
+2014-06-04 17:10:57.433 FacebookJS[89036:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/AE6839AA-4A31-4380-B4BE-FE66B809D065/FacebookJS.app/www/index.html
+2014-06-04 17:10:59.073 FacebookJS[89036:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-06-04 17:10:59.077 FacebookJS[89036:70b] THREAD WARNING: ['InAppBrowser'] took '240.854004' ms. Plugin should use a background thread.
+2014-06-04 17:11:01.016 FacebookJS[89036:70b] webView:didFailLoadWithError - -999: The operation couldn’t be completed. (NSURLErrorDomain error -999.)
+2014-06-04 17:11:14.887 FacebookJS[89036:70b] THREAD WARNING: ['InAppBrowser'] took '11.836914' ms. Plugin should use a background thread.
+2014-06-04 17:11:43.944 FacebookJS[89036:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+Terminating in response to SpringBoard's termination.
