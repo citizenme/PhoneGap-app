@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <script src="js/"></script>
+    <script src="js/index.js"></script>
+</head> 
+<body> 
+
+        <div data-role="header" data-position="inline">
+            <h1>jQuery Mobile Twitter App</h1>
+        </div>
+
+        <div style="padding-left:1%;">
+                <input type="search" name="tuser" id="tuser" value="lenniedv" width="3"/>
+                <a data-inline="true" data-role="button" href="#" data-theme="c" class="ui-btn ui-btn-inline ui-btn-corner-all ui-shadow ui-btn-up-c" onClick="javascript:getTweets()"><span aria-hidden="true" class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Get Tweets</span></span></a>
+        </div>
+
+        <div style="padding-left:1%;">
+            <div class="content-primary">   
+                <ul data-role="listview" data-inset="true" id="tweets">
+                </ul>
+            </div>  
+        </div>
+
+        <br>
+        <div data-role="header" data-position="inline">
+            <h1></h1>
+        </div>
+
+</body>
+</html>
