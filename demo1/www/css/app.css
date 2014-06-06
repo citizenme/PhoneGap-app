@@ -1,0 +1,100 @@
+body {
+        font-family: open_sansregular, sans-serif;
+        background-color: #222;
+    }
+    
+.headerBar { background: #030303 bottom left repeat-x url(../images/gradient-divider.png); font-weight: bold; color: #FFF; z-index: 100000; }
+
+.navbar {
+    background-color: #030303;
+    color: #d4d4d4;
+    font-family: open_sansbold, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.navigation .tab-icon { width: 80px; height: 49px; top: 1px; display: block; margin: 0 auto; background-color: #212121; }
+.navigation.on .tab-icon { background-color: #000; }
+
+.services-icon { background: transparent top left no-repeat url(../images/services-off2x.png); background-size: 80px 49px; }
+.navigation.on .services-icon { background-image: url(../images/services-on2x.png); }
+
+.feedback-icon { background: transparent top left no-repeat url(../images/feedback-off2x.png); background-size: 80px 49px; }
+.navigation.on .feedback-icon { background-image: url(../images/feedback-on2x.png); }
+
+.mirror-icon { background: transparent top left no-repeat url(../images/mirror-off2x.png); background-size: 80px 49px; }
+.navigation.on .mirror-icon { background-image: url(../images/mirror-on2x.png); }
+
+.menu-icon { background: transparent top left no-repeat url(../images/menu-off2x.png); background-size: 80px 49px; }
+.navigation.on .menu-icon { background-image: url(../images/menu-on2x.png); }
+
+
+.tab-icon  {
+    width: 80px; height: 49px;
+    display: block;
+    margin: 0 auto;
+ }
+
+.navigation {
+    padding: 3px;
+    font-family: open_sansbold;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+.navigation.off {
+    color: #999;
+    background: #212121;
+}
+
+.navigation.on {
+    color: #d4d4d4;
+    background: #000;
+}
+
+.navigation .icon {
+    display: inline-block;
+    width: 80px; height: 49px;
+}
+
+p {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.gridBackground { background-color: #212121; }
+
+.service-button { color: #808080; padding-top: 90px; text-align: center; display: block; width: 77px; height: 117; }
+
+.google-button { background: transparent top left no-repeat url(../images/google-service-off.png); background-size: 77px 77px; }
+.services.on .google-button { background-image: url(../images/google-service-on.png); }
+
+.linkedIn-button { background: transparent top left no-repeat url(../images/linkdin-service-off.png); background-size: 77px 77px; }
+.services.on .linkedIn-button { background-image: url(../images/linkdin-service-on.png); }
+
+.twitter-button { background: transparent top left no-repeat url(../images/twitter-service-off.png); background-size: 77px 77px; }
+.services.on .twitter-button { background-image: url(../images/twitter-service-on.png); }
+
+.citizenme-button { background: transparent top left no-repeat url(../images/citizenme-service-off.png); background-size: 77px 77px; }
+.services.on .citizenme-button { background-image: url(../images/citizenme-service-on.png); }
+
+.instagram-button { background: transparent top left no-repeat url(../images/instagram-service-off.png); background-size: 77px 77px; }
+.services.on .instagram-button { background-image: url(../images/instagram-service-on.png); }
+
+.facebook-button { background: transparent top left no-repeat url(../images/facebook-service-off.png); background-size: 77px 77px; }
+.services.on .facebook-button { background-image: url(../images/facebook-service-on.png); }
+
+.gridContainer .famous-container-group {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+    }  
