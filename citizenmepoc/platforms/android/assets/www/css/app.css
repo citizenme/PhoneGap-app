@@ -1,0 +1,198 @@
+body {
+        font-family: open_sansregular, sans-serif;
+        background-color: #222;
+    }
+
+table, td { width: 100%; padding: 0; }
+
+table td { padding: 10px 20px; font-weight: bold; border-bottom: 1px solid #000; }
+.black-td { background-color: #000; }
+    
+.headerBar { background: #030303 bottom left repeat-x url(../images/gradient-divider.png); font-weight: bold; color: #FFF; z-index: 100000; }
+
+.navbar {
+    background-color: #030303;
+    color: #d4d4d4;
+    font-family: open_sansbold, sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+}
+
+.navigation .tab-icon { width: 80px; height: 49px; top: 1px; display: block; margin: 0 auto; background-color: #212121; }
+.navigation.on .tab-icon { background-color: #000; }
+
+.services-icon { background: transparent top left no-repeat url(../images/services-off2x.png); background-size: 80px 49px; }
+.navigation.on .services-icon { background-image: url(../images/services-on2x.png); }
+
+.feedback-icon { background: transparent top left no-repeat url(../images/feedback-off2x.png); background-size: 80px 49px; }
+.navigation.on .feedback-icon { background-image: url(../images/feedback-on2x.png); }
+
+.mirror-icon { background: transparent top left no-repeat url(../images/mirror-off2x.png); background-size: 80px 49px; }
+.navigation.on .mirror-icon { background-image: url(../images/mirror-on2x.png); }
+
+.menu-icon { background: transparent top left no-repeat url(../images/menu-off2x.png); background-size: 80px 49px; }
+.navigation.on .menu-icon { background-image: url(../images/menu-on2x.png); }
+
+
+.tab-icon  {
+    width: 80px; height: 49px;
+    display: block;
+    margin: 0 auto;
+ }
+
+.navigation {
+    z-index: 1;
+}
+
+.navigation.off {
+    color: #999;
+    background: #212121;
+}
+
+.navigation.on {
+    color: #d4d4d4;
+    background: #000;
+}
+
+.navigation .icon {
+    display: inline-block;
+    width: 80px; height: 49px;
+}
+
+p {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+.gridBackground { background-color: #212121; }
+
+.service-button { color: #808080; padding-top: 90px; text-align: center; display: block; width: 77px; height: 117; }
+
+.google-button { background: transparent top left no-repeat url(../images/google-service-off.png); background-size: 77px 77px; }
+.services.on .google-button { background-image: url(../images/google-service-on.png); }
+
+.linkedIn-button { background: transparent top left no-repeat url(../images/linkdin-service-off.png); background-size: 77px 77px; }
+.services.on .linkedIn-button { background-image: url(../images/linkdin-service-on.png); }
+
+.twitter-button { background: transparent top left no-repeat url(../images/twitter-service-off.png); background-size: 77px 77px; }
+.services.on .twitter-button { background-image: url(../images/twitter-service-on.png); }
+
+.citizenme-button { background: transparent top left no-repeat url(../images/citizenme-service-off.png); background-size: 77px 77px; }
+.services.on .citizenme-button { background-image: url(../images/citizenme-service-on.png); }
+
+.instagram-button { background: transparent top left no-repeat url(../images/instagram-service-off.png); background-size: 77px 77px; }
+.services.on .instagram-button { background-image: url(../images/instagram-service-on.png); }
+
+.facebook-button { background: transparent top left no-repeat url(../images/facebook-service-off.png); background-size: 77px 77px; }
+.services.on .facebook-button { background-image: url(../images/facebook-service-on.png); }
+
+.gridContainer .famous-container-group {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+    }
+
+/* Circles */
+.mirror.profile {
+    background: transparent top left no-repeat url(../images/mirror/profile.png); background-size: cover;
+}
+.lens.profile {
+    background: transparent top left no-repeat url(../images/lenses/profile.png); background-size: cover;
+}
+.mirror.youtube.red {
+    background: transparent top left no-repeat url(../images/mirror/youtube-red.png); background-size: cover;
+}
+.mirror.youtube.green {
+    background: transparent top left no-repeat url(../images/mirror/youtube-green.png); background-size: cover;
+}
+.lens.youtube {
+    background: transparent top left no-repeat url(../images/lenses/youtube-lens.png); background-size: cover;
+}
+.mirror.facebook.red {
+    background: transparent top left no-repeat url(../images/mirror/facebook-red.png); background-size: cover;
+}
+.mirror.facebook.green {
+    background: transparent top left no-repeat url(../images/mirror/facebook-green.png); background-size: cover;
+}
+.lens.facebook {
+    background: transparent top left no-repeat url(../images/lenses/facebook-lens.png); background-size: cover;
+}
+.mirror.instagram.red {
+    background: transparent top left no-repeat url(../images/mirror/instagram-red.png); background-size: cover;
+}
+.mirror.instagram.green {
+    background: transparent top left no-repeat url(../images/mirror/instagram-green.png); background-size: cover;
+}
+.lens.instagram {
+    background: transparent top left no-repeat url(../images/lenses/instagram-lens.png); background-size: cover;
+}
+.mirror.tumblr.red {
+    background: transparent top left no-repeat url(../images/mirror/tumblr-red.png); background-size: cover;
+}
+.mirror.tumblr.green {
+    background: transparent top left no-repeat url(../images/mirror/tumblr-green.png); background-size: cover;
+}
+.lens.tumblr {
+    background: transparent top left no-repeat url(../images/lenses/tumblr-lens.png); background-size: cover;
+}
+.mirror.twitter.red {
+    background: transparent top left no-repeat url(../images/mirror/twitter-red.png); background-size: cover;
+}
+.mirror.twitter.green {
+    background: transparent top left no-repeat url(../images/mirror/twitter-green.png); background-size: cover;
+}
+.lens.twitter {
+    background: transparent top left no-repeat url(../images/lenses/twitter-lens.png); background-size: cover;
+}
+.mirror.linkedin.red {
+    background: transparent top left no-repeat url(../images/mirror/linkedin-red.png); background-size: cover;
+}
+.mirror.linkedin.green {
+    background: transparent top left no-repeat url(../images/mirror/linkedin-green.png); background-size: cover;
+}
+.lens.linkedin {
+    background: transparent top left no-repeat url(../images/lenses/linkedin-lens.png); background-size: cover;
+}
+.mirror.gplus.red {
+    background: transparent top left no-repeat url(../images/mirror/gplus-red.png); background-size: cover;
+}
+.mirror.gplus.green {
+    background: transparent top left no-repeat url(../images/mirror/gplus-green.png); background-size: cover;
+}
+.lens.gplus {
+    background: transparent top left no-repeat url(../images/lenses/gplus-lens.png); background-size: cover;
+}
+.mirror.citizenme {
+    background: transparent top left no-repeat url(../images/mirror/citizenme-black.png); background-size: cover;
+}
+.lens.citizenme {
+    background: transparent top left no-repeat url(../images/lenses/citizenme-lens.png); background-size: cover;
+}
+.mirror.dropbox.red {
+    background: transparent top left no-repeat url(../images/mirror/dropbox-red.png); background-size: cover;
+}
+.mirror.dropbox.green {
+    background: transparent top left no-repeat url(../images/mirror/dropbox-green.png); background-size: cover;
+}
+.lens.dropbox {
+    background: transparent top left no-repeat url(../images/lenses/dropbox-lens.png); background-size: cover;
+}
+
+/* Lense Icons */
+.profile-icon { background:  transparent top left no-repeat url(../images/icons/settings-bubble-flat.png); background-size: cover; }
+.linkedin + .profile-icon { left: 38px; top: -115px; }
+.youtube + .profile-icon { top: -72px; left: -10px; }
+.facebook + .profile-icon { top: -80px; left: 26px; }
+.instagram + .profile-icon { top: -135px; left: -26px; }
+.tumblr + .profile-icon { top: -145px; left: 10px; }
+.gplus + .profile-icon { top: -145px; left: 10px; }
+.twitter + .profile-icon { top: -100px; left: -36px; }
+.profile + .profile-icon { top: -108px; }
+.citizenme + .profile-icon { top: -89px; left: 62px; }
+.dropbox + .profile-icon { top: -61px; left: -46px; }
+
