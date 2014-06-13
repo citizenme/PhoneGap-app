@@ -1,0 +1,12 @@
+2014-06-13 09:36:14.906 Citizenme_POC[88827:70b] Multi-tasking -> Device: YES, App: YES
+2014-06-13 09:36:15.016 Citizenme_POC[88827:70b] Unlimited access to network resources
+2014-06-13 09:36:15.020 Citizenme_POC[88827:70b] 
+
+Started backup to iCloud! Please be careful.
+Your application might rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines"
+You could find it at the following address https://developer.apple.com/icloud/documentation/data-storage/ .
+
+2014-06-13 09:36:15.838 Citizenme_POC[88827:70b] Resetting plugins due to page load.
+2014-06-13 09:36:18.091 Citizenme_POC[88827:70b] Finished load of: file:///Users/lenniedevilliers/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/D56A95EE-3C2C-4A2C-AA9A-CEA48EF0BBFF/Citizenme_POC.app/www/index.html
+Terminating in response to SpringBoard's termination.
