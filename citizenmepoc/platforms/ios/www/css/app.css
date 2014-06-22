@@ -20,6 +20,7 @@ table td { padding: 10px 20px; font-weight: bold; border-bottom: 1px solid #000;
     text-align: center;
     z-index: 1;
 }
+.navigation { z-index: 1000000000000;}
 
 .navigation .tab-icon { width: 80px; height: 49px; top: 1px; display: block; margin: 0 auto; background-color: #212121; }
 .navigation.on .tab-icon { background-color: #000; }
@@ -182,6 +183,186 @@ p {
 .lens.dropbox {
     background: transparent top left no-repeat url(../images/lenses/dropbox-lens.png); background-size: cover;
 }
+.mirror.amazon.red {
+    background: transparent top left no-repeat url(../images/mirror/amazon-red.png); background-size: cover;
+}
+.mirror.amazon.green {
+    background: transparent top left no-repeat url(../images/mirror/amazon-green.png); background-size: cover;
+}
+.lens.amazon {
+    background: transparent top left no-repeat url(../images/lenses/amazon-lens.png); background-size: cover;
+}
+.mirror.apple.red {
+    background: transparent top left no-repeat url(../images/mirror/apple-red.png); background-size: cover;
+}
+.mirror.apple.green {
+    background: transparent top left no-repeat url(../images/mirror/apple-green.png); background-size: cover;
+}
+.lens.apple {
+    background: transparent top left no-repeat url(../images/lenses/apple-lens.png); background-size: cover;
+}
+.mirror.delicious.red {
+    background: transparent top left no-repeat url(../images/mirror/delicious-red.png); background-size: cover;
+}
+.mirror.delicious.green {
+    background: transparent top left no-repeat url(../images/mirror/delicious-green.png); background-size: cover;
+}
+.lens.delicious {
+    background: transparent top left no-repeat url(../images/lenses/delicious-lens.png); background-size: cover;
+}
+.mirror.duck.red {
+    background: transparent top left no-repeat url(../images/mirror/duckduckgo-red.png); background-size: cover;
+}
+.mirror.duck.green {
+    background: transparent top left no-repeat url(../images/mirror/duckduckgo-green.png); background-size: cover;
+}
+.lens.duck {
+    background: transparent top left no-repeat url(../images/lenses/duckduckgo-lens.png); background-size: cover;
+}
+.mirror.evernote.red {
+    background: transparent top left no-repeat url(../images/mirror/evernote-red.png); background-size: cover;
+}
+.mirror.evernote.green {
+    background: transparent top left no-repeat url(../images/mirror/evernote-green.png); background-size: cover;
+}
+.lens.evernote {
+    background: transparent top left no-repeat url(../images/lenses/evernote-lens.png); background-size: cover;
+}
+.mirror.flickr.red {
+    background: transparent top left no-repeat url(../images/mirror/flickr-red.png); background-size: cover;
+}
+.mirror.flickr.green {
+    background: transparent top left no-repeat url(../images/mirror/flickr-green.png); background-size: cover;
+}
+.lens.flickr {
+    background: transparent top left no-repeat url(../images/lenses/flickr-lens.png); background-size: cover;
+}
+.mirror.foursquare.red {
+    background: transparent top left no-repeat url(../images/mirror/foursquare-red.png); background-size: cover;
+}
+.mirror.foursquare.green {
+    background: transparent top left no-repeat url(../images/mirror/foursquare-green.png); background-size: cover;
+}
+.lens.foursquare {
+    background: transparent top left no-repeat url(../images/lenses/foursquare-lens.png); background-size: cover;
+}
+.mirror.github.red {
+    background: transparent top left no-repeat url(../images/mirror/github-red.png); background-size: cover;
+}
+.mirror.github.green {
+    background: transparent top left no-repeat url(../images/mirror/github-green.png); background-size: cover;
+}
+.lens.github {
+    background: transparent top left no-repeat url(../images/lenses/github-lens.png); background-size: cover;
+}
+.mirror.microsoft.red {
+    background: transparent top left no-repeat url(../images/mirror/microsoft-red.png); background-size: cover;
+}
+.mirror.microsoft.green {
+    background: transparent top left no-repeat url(../images/mirror/microsoft-green.png); background-size: cover;
+}
+.lens.microsoft {
+    background: transparent top left no-repeat url(../images/lenses/microsoft-lens.png); background-size: cover;
+}
+.mirror.myspace.red {
+    background: transparent top left no-repeat url(../images/mirror/myspace-red.png); background-size: cover;
+}
+.mirror.myspace.green {
+    background: transparent top left no-repeat url(../images/mirror/myspace-green.png); background-size: cover;
+}
+.lens.myspace {
+    background: transparent top left no-repeat url(../images/lenses/myspace-lens.png); background-size: cover;
+}
+.mirror.path.red {
+    background: transparent top left no-repeat url(../images/mirror/path-red.png); background-size: cover;
+}
+.mirror.path.green {
+    background: transparent top left no-repeat url(../images/mirror/path-green.png); background-size: cover;
+}
+.lens.path {
+    background: transparent top left no-repeat url(../images/lenses/path-lens.png); background-size: cover;
+}
+.mirror.pinterest.red {
+    background: transparent top left no-repeat url(../images/mirror/pinterest-red.png); background-size: cover;
+}
+.mirror.pinterest.green {
+    background: transparent top left no-repeat url(../images/mirror/pinterest-green.png); background-size: cover;
+}
+.lens.pinterest {
+    background: transparent top left no-repeat url(../images/lenses/pinterest-lens.png); background-size: cover;
+}
+.mirror.skype.red {
+    background: transparent top left no-repeat url(../images/mirror/skype-red.png); background-size: cover;
+}
+.mirror.skype.green {
+    background: transparent top left no-repeat url(../images/mirror/skype-green.png); background-size: cover;
+}
+.lens.skype {
+    background: transparent top left no-repeat url(../images/lenses/skype-lens.png); background-size: cover;
+}
+.mirror.soundcloud.red {
+    background: transparent top left no-repeat url(../images/mirror/soundcloud-red.png); background-size: cover;
+}
+.mirror.soundcloud.green {
+    background: transparent top left no-repeat url(../images/mirror/soundcloud-green.png); background-size: cover;
+}
+.lens.soundcloud {
+    background: transparent top left no-repeat url(../images/lenses/soundcloud-lens.png); background-size: cover;
+}
+.mirror.spotify.red {
+    background: transparent top left no-repeat url(../images/mirror/spotify-red.png); background-size: cover;
+}
+.mirror.spotify.green {
+    background: transparent top left no-repeat url(../images/mirror/spotify-green.png); background-size: cover;
+}
+.lens.spotify {
+    background: transparent top left no-repeat url(../images/lenses/spotify-lens.png); background-size: cover;
+}
+.mirror.wordpress.red {
+    background: transparent top left no-repeat url(../images/mirror/wordpress-red.png); background-size: cover;
+}
+.mirror.wordpress.green {
+    background: transparent top left no-repeat url(../images/mirror/wordpress-green.png); background-size: cover;
+}
+.lens.wordpress {
+    background: transparent top left no-repeat url(../images/lenses/wordpress-lens.png); background-size: cover;
+}
+.mirror.yahoo.red {
+    background: transparent top left no-repeat url(../images/mirror/yahoo-red.png); background-size: cover;
+}
+.mirror.yahoo.green {
+    background: transparent top left no-repeat url(../images/mirror/yahoo-green.png); background-size: cover;
+}
+.lens.yahoo {
+    background: transparent top left no-repeat url(../images/lenses/yahoo-lens.png); background-size: cover;
+}
+.mirror.yelp.red {
+    background: transparent top left no-repeat url(../images/mirror/yelp-red.png); background-size: cover;
+}
+.mirror.yelp.green {
+    background: transparent top left no-repeat url(../images/mirror/yelp-green.png); background-size: cover;
+}
+.lens.yelp {
+    background: transparent top left no-repeat url(../images/lenses/yelp-lens.png); background-size: cover;
+}
+.mirror.stumbledupon.red {
+    background: transparent top left no-repeat url(../images/mirror/stumbledupon-red.png); background-size: cover;
+}
+.mirror.stumbledupon.green {
+    background: transparent top left no-repeat url(../images/mirror/stumbledupon-green.png); background-size: cover;
+}
+.lens.stumbledupon {
+    background: transparent top left no-repeat url(../images/lenses/stumbledupon-lens.png); background-size: cover;
+}
+.mirror.twitpic.red {
+    background: transparent top left no-repeat url(../images/mirror/twitpic-red.png); background-size: cover;
+}
+.mirror.twitpic.green {
+    background: transparent top left no-repeat url(../images/mirror/twitpic-green.png); background-size: cover;
+}
+.lens.twitpic {
+    background: transparent top left no-repeat url(../images/lenses/twitpic-lens.png); background-size: cover;
+}
 
 /* Lense Icons */
 .profile-icon { background:  transparent top left no-repeat url(../images/icons/settings-bubble-flat.png); background-size: cover; }
@@ -190,9 +371,30 @@ p {
 .facebook + .profile-icon { top: -80px; left: 26px; }
 .instagram + .profile-icon { top: -135px; left: -26px; }
 .tumblr + .profile-icon { top: -145px; left: 10px; }
-.gplus + .profile-icon { top: -145px; left: 10px; }
+.gplus + .profile-icon { top: -124px; left: -60px; }
 .twitter + .profile-icon { top: -100px; left: -36px; }
 .profile + .profile-icon { top: -108px; }
 .citizenme + .profile-icon { top: -89px; left: 62px; }
 .dropbox + .profile-icon { top: -61px; left: -46px; }
+.amazon + .profile-icon { top: -55px; left: 55px; }
+.apple + .profile-icon { top: -45px; left: 18px; }
+.delicious + .profile-icon { top: -33px; left: -20px; }
+.duck + .profile-icon { top: -23px; left: -57px; }
+.evernote + .profile-icon { top: -50px; left: -85px; }
+.flickr + .profile-icon { top: -88px; left: -74px; }
+.foursquare + .profile-icon { top: -115px; left: -102px; }
+.github + .profile-icon { top: -63px; left: 95px; }
+.microsoft + .profile-icon { top: -27px; left: 83px; }
+.myspace + .profile-icon { top: -17px; left: 46px; }
+.path + .profile-icon { top: -8px; left: 10px; }
+.pinterest + .profile-icon { top: -100px; left: 105px; }
+.skype + .profile-icon { top: -129px; left: 75px; }
+.soundcloud + .profile-icon { top: -155px; left: 50px; }
+.spotify + .profile-icon { top: -172px; left: -17px; }
+.wordpress + .profile-icon { top: -164px; left: -55px; }
+.yahoo + .profile-icon { top: -182px; left: 19px; }
+.yelp + .profile-icon { top: -163px; left: 84px; }
+.stumbledupon + .profile-icon { top: -154px; left: -88px; }
+.twitpic + .profile-icon { top: -193px; left: 55px; }
+
 

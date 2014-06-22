@@ -33,14 +33,28 @@ define(function(require, exports, module) {
             offClasses: ['off'],
             onClasses: ['on'],
             size: undefined,
-            outTransition: {curve: 'easeInOut', duration: 300},
-            inTransition: {curve: 'easeInOut', duration: 300},
+            // outTransition: {curve: 'easeInOut', duration: 300},
+            // inTransition: {curve: 'easeInOut', duration: 300},
             toggleMode: ToggleButton.TOGGLE,
-            crossfade: true
+            //crossfade: true
         };
 
         this._eventOutput = new EventHandler();
         EventHandler.setOutputHandler(this, this._eventOutput);
+
+        this._eventInput = new EventHandler();
+        EventHandler.setInputHandler(this, this._eventInput);
+
+        this._eventInput.on('selectCircle', function() {
+            this.select();
+        }.bind(this));
+        this._eventInput.on('deselectCircle', function() {
+            this.deselect();
+        }.bind(this));
+
+        // this.eventInput.on('hires tutor', function(){
+        //     alert('Accepted to Harvard');
+        // }.bind(this));
 
         this.offSurface = new Surface();
         this.offSurface.on('click', function() {
@@ -82,7 +96,7 @@ define(function(require, exports, module) {
 
 
         this.arbiter = new RenderController({
-            overlap : this.options.crossfade
+            //overlap : this.options.crossfade
         });
 
         this.deselect();

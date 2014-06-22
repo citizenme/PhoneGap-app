@@ -23,28 +23,41 @@ define(function(require, exports, module) {
     var Easing              = require('famous/transitions/Easing');
     var Transitionable      = require("famous/transitions/Transitionable");
     var Draggable           = require("famous/modifiers/Draggable");
+    var MyDraggable         = require("./MyDraggable");
     var SnapTransition      = require("famous/transitions/SnapTransition");
+    var SpringTransition    = require("famous/transitions/SpringTransition");
     var EventHandler        = require('famous/core/EventHandler');
     var ToggleCircle        = require('./ToggleCircle');
-    var ToggleButton        = require('./ToggleButton');
+    //var ToggleButton        = require('./ToggleButton');
     
+    Transitionable.registerMethod('spring', SpringTransition);
     Transitionable.registerMethod('snap', SnapTransition);
  
     var mainContext = Engine.createContext();
+
+    var trans = {
+      method: 'spring',
+      period: 1000,
+      dampingRatio: 30000,
+      velocity: 100000
+    };
     
     // Draggable Object Parameters
-    var draggable = new Draggable({
-        xRange: [-100, 300],
-        yRange: [-100, 350]
+    var draggable = new MyDraggable({
+        snapX: 0, 
+        snapY: 0, 
+        xRange: [-2000, 2000],
+        yRange: [-2000, 2000],
+        scale: 0.1
     });
     
-    // Variable for draggable
-    var trans = {
-        method: 'snap',
-        period: 300,
-        dampingRatio: 0.3,
-        velocity: 0
-    };
+    var windowWidth = window.innerWidth;
+    var isWideScreen;
+    if (windowWidth > 400) {
+        isWideScreen = true;
+    }else {
+        isWideScreen = false;
+    }
 
     // Variables for the ScaleSync
     var start = 0;
@@ -75,27 +88,12 @@ define(function(require, exports, module) {
     });
 
     var containerScaleModifier = new StateModifier( {
-         transform: Transform.scale(0.25, 0.25, 1)
+         
+         transform: Transform.scale(1, 1, 1)
     });
-    
-    // HTML to show ScaleSync variable
-    var contentTemplate = function() {
-        return "<div>Start Count: " + start + "</div>" +
-        "<div>End Count: " + end + "</div>" +
-        "<div>Update Count: " + update + "</div>" +
-        "<div>Scale factor: " + scale.toFixed(3) + "</div>" +
-        "<div>New Scale factor: " + newScale.toFixed(3) + "</div>" +
-        "<div>Scale Direction: " + growShrink + "</div>";
-    };
-    
-    // Surface for ScaleSync Output
-    var updateSurface = new Surface({
-        size: [200, 200],
-        content: contentTemplate(),
-        properties: {
-            color: '#FFFFFF',
-            zIndex: '100'
-        }
+
+    var footerTranslateModifier = new StateModifier({
+         align: [0,1]
     });
     
     var layout = new HeaderFooterLayout({ headerSize: 44, footerSize: 50 });
@@ -143,6 +141,7 @@ define(function(require, exports, module) {
         properties: {
             overflow: 'hidden',
             backgroundColor: '#212121'
+            //backgroundColor: '#FFFFFF'
         }
     });
     
@@ -219,7 +218,7 @@ define(function(require, exports, module) {
         offClasses: ['mirror', 'gplus', 'green']
     });
     var gplusPosMod = new StateModifier({
-        origin: [0.795, 0.575]
+        origin: [0.792, 0.58]
     });
     var citizenme_circle = new ToggleCircle({
         size: [300, 300],
@@ -239,6 +238,186 @@ define(function(require, exports, module) {
     var dropboxPosMod = new StateModifier({
         origin: [0.715, 0.285]
     });
+    var amazon_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','amazon'],
+        offClasses: ['mirror', 'amazon', 'red']
+    });
+    var amazonPosMod = new StateModifier({
+        origin: [0.252, 0.249]
+    });
+    var apple_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','apple'],
+        offClasses: ['mirror', 'apple', 'green']
+    });
+    var applePosMod = new StateModifier({
+        origin: [0.423, 0.205]
+    });
+    var delicious_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','delicious'],
+        offClasses: ['mirror', 'delicious', 'red']
+    });
+    var deliciousPosMod = new StateModifier({
+        origin: [0.592, 0.160]
+    });
+    var duck_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','duck'],
+        offClasses: ['mirror', 'duck', 'red']
+    });
+    var duckPosMod = new StateModifier({
+        origin: [0.761, 0.115]
+    });
+    var evernote_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','evernote'],
+        offClasses: ['mirror', 'evernote', 'green']
+    });
+    var evernotePosMod = new StateModifier({
+        origin: [0.885, 0.240]
+    });
+    var flickr_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','flickr'],
+        offClasses: ['mirror', 'flickr', 'red']
+    });
+    var flickrPosMod = new StateModifier({
+        origin: [0.840, 0.410]
+    });
+    var foursquare_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','foursquare'],
+        offClasses: ['mirror', 'foursquare', 'red']
+    });
+    var foursquarePosMod = new StateModifier({
+        origin: [0.962, 0.535]
+    });
+    var github_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','github'],
+        offClasses: ['mirror', 'github', 'green']
+    });
+    var githubPosMod = new StateModifier({
+        origin: [0.082, 0.295]
+    });
+    var microsoft_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','microsoft'],
+        offClasses: ['mirror', 'microsoft', 'red']
+    });
+    var microsoftPosMod = new StateModifier({
+        origin: [0.126, 0.125]
+    });
+    var myspace_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','myspace'],
+        offClasses: ['mirror', 'myspace', 'red']
+    });
+    var myspacePosMod = new StateModifier({
+        origin: [0.296, 0.080]
+    });
+    var path_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','path'],
+        offClasses: ['mirror', 'path', 'red']
+    });
+    var pathPosMod = new StateModifier({
+        origin: [0.465, 0.040]
+    });
+    var pinterest_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','pinterest'],
+        offClasses: ['mirror', 'pinterest', 'green']
+    });
+    var pinterestPosMod = new StateModifier({
+        origin: [0.035, 0.465]
+    });
+    var skype_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','skype'],
+        offClasses: ['mirror', 'skype', 'green']
+    });
+    var skypePosMod = new StateModifier({
+        origin: [0.160, 0.590]
+    });
+    var soundcloud_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','soundcloud'],
+        offClasses: ['mirror', 'soundcloud', 'green']
+    });
+    var soundcloudPosMod = new StateModifier({
+        origin: [0.284, 0.715]
+    });
+    var spotify_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','spotify'],
+        offClasses: ['mirror', 'spotify', 'red']
+    });
+    var spotifyPosMod = new StateModifier({
+        origin: [0.580, 0.795]
+    });
+    var wordpress_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','wordpress'],
+        offClasses: ['mirror', 'wordpress', 'red']
+    });
+    var wordpressPosMod = new StateModifier({
+        origin: [0.750, 0.75]
+    });
+    var yahoo_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','yahoo'],
+        offClasses: ['mirror', 'yahoo', 'red']
+    });
+    var yahooPosMod = new StateModifier({
+        origin: [0.41, 0.84]
+    });
+    var yelp_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','yelp'],
+        offClasses: ['mirror', 'yelp', 'red']
+    });
+    var yelpPosMod = new StateModifier({
+        origin: [0.115, 0.755]
+    });
+    var stumbledupon_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','stumbledupon'],
+        offClasses: ['mirror', 'stumbledupon', 'red']
+    });
+    var stumbleduponPosMod = new StateModifier({
+        origin: [0.915, 0.705]
+    });
+    var twitpic_circle = new ToggleCircle({
+        size: [300, 300],
+        content: '',
+        onClasses: ['lens','twitpic'],
+        offClasses: ['mirror', 'twitpic', 'green']
+    });
+    var twitpicPosMod = new StateModifier({
+        origin: [0.238, 0.882]
+    });
 
     view.add(originCenterMod).add(profile_circle);
     view.add(youtubePosMod).add(youtube_circle);
@@ -250,6 +429,26 @@ define(function(require, exports, module) {
     view.add(gplusPosMod).add(gplus_circle);
     view.add(citizenmePosMod).add(citizenme_circle);
     view.add(dropboxPosMod).add(dropbox_circle);
+    view.add(amazonPosMod).add(amazon_circle);
+    view.add(applePosMod).add(apple_circle);
+    view.add(deliciousPosMod).add(delicious_circle);
+    view.add(duckPosMod).add(duck_circle);
+    view.add(evernotePosMod).add(evernote_circle);
+    view.add(flickrPosMod).add(flickr_circle);
+    view.add(foursquarePosMod).add(foursquare_circle);
+    view.add(githubPosMod).add(github_circle);
+    view.add(microsoftPosMod).add(microsoft_circle);
+    view.add(myspacePosMod).add(myspace_circle);
+    view.add(pathPosMod).add(path_circle);
+    view.add(pinterestPosMod).add(pinterest_circle);
+    view.add(skypePosMod).add(skype_circle);
+    view.add(soundcloudPosMod).add(soundcloud_circle);
+    view.add(spotifyPosMod).add(spotify_circle);
+    view.add(wordpressPosMod).add(wordpress_circle);
+    view.add(yahooPosMod).add(yahoo_circle);
+    view.add(yelpPosMod).add(yelp_circle);
+    view.add(stumbleduponPosMod).add(stumbledupon_circle);
+    view.add(twitpicPosMod).add(twitpic_circle);
     container.add(view);
     
      // Events
@@ -257,69 +456,95 @@ define(function(require, exports, module) {
     Engine.pipe(scaleSync);
     // ScaleSync Pipe Event
     Engine.pipe(draggable);
+
+    var eventHandlerCircle = new EventHandler();
+    var eventHandlerSelectCircle = new EventHandler();
+
+    eventHandlerCircle.pipe(eventHandlerSelectCircle);
     
     // Scale Sync event functions
     scaleSync.on("start", function() {
         start++;
-        updateSurface.setContent(contentTemplate());
     });
 
     scaleSync.on("update", function(data) {
         update++;
         growShrink = data.velocity > 0 ? "Growing" : "Shrinking";
         scale = data.scale;
-        updateSurface.setContent(contentTemplate());
         
     });
+    function initialScale() {
+        
+         containerScaleModifier.setTransform(
+            Transform.scale(isWideScreen ? 0.4 : 0.15, isWideScreen ? 0.4 : 0.15, 1),
+            {curve: Easing.inCirc, duration : 500 }
+        );
+       
+        
+    };
+    function scaleUp() {
+        if(isWideScreen) {
+             modifier.setTransform(
+                Transform.scale(4.0, 4.0, 1),
+                {curve: Easing.inCirc, duration : 500 }
+            );
+        }else {
+            modifier.setTransform(
+                Transform.scale(6.0, 6.0, 1),
+                {curve: Easing.inCirc, duration : 500 }
+            );
+        }
+        footerMod.setTransform({
+            transform: Transform.translate(0, 0, 1000000000000)
+        });
+    };
+    function scaleDown() {
+
+            modifier.setTransform(
+            Transform.scale(1.0, 1.0, 1),
+            {curve: Easing.inCirc, duration : 500 }
+        );
+        footerMod.setTransform({
+            transform: Transform.translate(0, 0, 1000000000000)
+        });
+    };
 
     scaleSync.on("end", function() {
         end++;
         
         if (update > 0) {
             if (scale < 1){
-                newScale = newScale - (2 + scale);
-                if(newScale < 1){
-                    newScale = 1;
-                }
+                newScale = 1;
+                //eventHandlerSelectCircle.emit('deselectCircle');
+                // newScale = newScale - (2 + scale);
+                // if(newScale < 1){
+                //     newScale = 1;
+                // }
             }else if (scale > 1) {
-                newScale = newScale + (scale);
-                if (newScale >= 3.5)
-                {
-                    newScale = 3.5;
-                }
+                newScale = isWideScreen ? 4.0 : 6.5;
+                //eventHandlerSelectCircle.emit('selectCircle');
+                //newScale = newScale + (scale);
+                // if (newScale >= 2.5)
+                // {
+                //     newScale = 9.5;
+                // }
             }
         }else {
             newScale = scale;
         }
-         modifier.setTransform(
+        modifier.setTransform(
             Transform.scale(newScale, newScale, 1),
             {curve: Easing.inCirc, duration : 500 }
         );
-         if (newScale == 1) {
-            profile_circle.deselect();
-            youtube_circle.deselect();
-            facebook_circle.deselect();
-            instagram_circle.deselect();
-            tumblr_circle.deselect();
-            twitter_circle.deselect();
-            linkedin_circle.deselect();
-            gplus_circle.deselect();
-            citizenme_circle.deselect();
-            dropbox_circle.deselect();
-         }else if (newScale > 2) {
-            profile_circle.select();
-            youtube_circle.select();
-            facebook_circle.select();
-            instagram_circle.select();
-            tumblr_circle.select();
-            twitter_circle.select();
-            linkedin_circle.select();
-            gplus_circle.select();
-            citizenme_circle.select();
-            dropbox_circle.select();
-         }
-         
-        updateSurface.setContent(contentTemplate());  
+        footerMod.setTransform({
+            transform: Transform.translate(0, 0, 1000000000000)
+        });
+        if (newScale == 1) {
+            eventHandlerSelectCircle.emit('deselectCircle');
+        }else if (newScale > 2) {
+            eventHandlerSelectCircle.emit('selectCircle');
+        }
+          
     });
     
     
@@ -353,12 +578,13 @@ define(function(require, exports, module) {
     var coverSurface = new Surface({
         size:[undefined,undefined],
         content:sideMenuTemplate(),
+        classes: ['noBorderRadius'],
         properties:{
             color:'white',
             backgroundColor:'#212121',
             zIndex:'3',
-            borderLeft: '2px solid black',
-            boxShadow:  '3px 3px 5px 6px #000'
+            borderLeft: 'none',
+            boxShadow:  'none'
         }
     });
     coverSurface.pipe(coverDrag);
@@ -371,6 +597,7 @@ define(function(require, exports, module) {
             }
         );
         coverState = true;
+        coverSurface.setProperties({boxShadow:'none', borderLeft: 'none'});
     }
     function coverDrawOut() {
         coverDrag.setPosition([25,0],
@@ -380,6 +607,7 @@ define(function(require, exports, module) {
             }
         );
         coverState=false;
+        coverSurface.setProperties({boxShadow:'3px 3px 5px 6px #000', borderLeft: '2px solid black'});
     }
     coverDrag.on('end',function(data) {
         if(data.position[0]>(window.innerWidth / 2)) {
@@ -400,151 +628,230 @@ define(function(require, exports, module) {
     layout.content.add(coverDrag).add(coverSurface);
 
     profile_circle.on("click", function() {
-        facebook_circle.select();
-        youtube_circle.select(); 
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     youtube_circle.on("click", function() {
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     facebook_circle.on("click", function() {
-        profile_circle.select();
-        youtube_circle.select(); 
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     instagram_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     tumblr_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     twitter_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        tumblr_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     linkedin_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     gplus_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        citizenme_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     citizenme_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        dropbox_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
     dropbox_circle.on("click", function() {
-        youtube_circle.select();
-        profile_circle.select();
-        facebook_circle.select();
-        instagram_circle.select();
-        tumblr_circle.select();
-        twitter_circle.select();
-        linkedin_circle.select();
-        gplus_circle.select();
-        citizenme_circle.select();
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
     });
+    amazon_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    apple_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    delicious_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    duck_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    evernote_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    flickr_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    foursquare_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    github_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    microsoft_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    myspace_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    path_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    pinterest_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
 
-    //Engine.pipe(youtube_circle);
-
-    // youtube_circle.on("iconSelect", function() {
-    //     alert('Hello');
-    // });
+    });
+    skype_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    soundcloud_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    spotify_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    wordpress_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    yahoo_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    yelp_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    stumbledupon_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
+    twitpic_circle.on("click", function() {
+        eventHandlerSelectCircle.emit('selectCircle');
+        scaleUp();
+    });
 
     var eventHandlerMirrorSelect = new EventHandler();
     var iconSelectHandler = new EventHandler();
 
     profile_circle.pipe(eventHandlerMirrorSelect);
     profile_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(profile_circle);
     youtube_circle.pipe(eventHandlerMirrorSelect);
     youtube_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(youtube_circle);
     facebook_circle.pipe(eventHandlerMirrorSelect);
     facebook_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(facebook_circle);
     instagram_circle.pipe(eventHandlerMirrorSelect);
     instagram_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(instagram_circle);
     tumblr_circle.pipe(eventHandlerMirrorSelect);
     tumblr_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(tumblr_circle);
     twitter_circle.pipe(eventHandlerMirrorSelect);
     twitter_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(twitter_circle);
     linkedin_circle.pipe(eventHandlerMirrorSelect);
     linkedin_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(linkedin_circle);
     gplus_circle.pipe(eventHandlerMirrorSelect);
     gplus_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(gplus_circle);
     citizenme_circle.pipe(eventHandlerMirrorSelect);
     citizenme_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(citizenme_circle);
     dropbox_circle.pipe(eventHandlerMirrorSelect);
     dropbox_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(dropbox_circle);
+    amazon_circle.pipe(eventHandlerMirrorSelect);
+    amazon_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(amazon_circle);
+    apple_circle.pipe(eventHandlerMirrorSelect);
+    apple_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(apple_circle);
+    delicious_circle.pipe(eventHandlerMirrorSelect);
+    delicious_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(delicious_circle);
+    duck_circle.pipe(eventHandlerMirrorSelect);
+    duck_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(duck_circle);
+    evernote_circle.pipe(eventHandlerMirrorSelect);
+    evernote_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(evernote_circle);
+    flickr_circle.pipe(eventHandlerMirrorSelect);
+    flickr_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(flickr_circle);
+    foursquare_circle.pipe(eventHandlerMirrorSelect);
+    foursquare_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(foursquare_circle);
+    github_circle.pipe(eventHandlerMirrorSelect);
+    github_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(github_circle);
+    microsoft_circle.pipe(eventHandlerMirrorSelect);
+    microsoft_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(microsoft_circle);
+    myspace_circle.pipe(eventHandlerMirrorSelect);
+    myspace_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(myspace_circle);
+    path_circle.pipe(eventHandlerMirrorSelect);
+    path_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(path_circle);
+    pinterest_circle.pipe(eventHandlerMirrorSelect);
+    pinterest_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(pinterest_circle);
+    skype_circle.pipe(eventHandlerMirrorSelect);
+    skype_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(skype_circle);
+    soundcloud_circle.pipe(eventHandlerMirrorSelect);
+    soundcloud_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(soundcloud_circle);
+    spotify_circle.pipe(eventHandlerMirrorSelect);
+    spotify_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(spotify_circle);
+    wordpress_circle.pipe(eventHandlerMirrorSelect);
+    wordpress_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(wordpress_circle);
+    yahoo_circle.pipe(eventHandlerMirrorSelect);
+    yahoo_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(yahoo_circle);
+    yelp_circle.pipe(eventHandlerMirrorSelect);
+    yelp_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(yelp_circle);
+    stumbledupon_circle.pipe(eventHandlerMirrorSelect);
+    stumbledupon_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(stumbledupon_circle);
+    twitpic_circle.pipe(eventHandlerMirrorSelect);
+    twitpic_circle.pipe(iconSelectHandler);
+    eventHandlerSelectCircle.pipe(twitpic_circle);
    
-    eventHandlerMirrorSelect.on('select', function() {
-         modifier.setTransform(
-            Transform.scale(3.0, 3.0, 1),
-            {curve: Easing.inCirc, duration : 500 }
-        );
+    // eventHandlerMirrorSelect.on('select', function() {
+    //      modifier.setTransform(
+    //         Transform.scale(8.0, 8.0, 1),
+    //         {curve: Easing.inCirc, duration : 500 }
+    //     );
+
+    // });
+    eventHandlerMirrorSelect.on('deselect', function() {
+         scaleDown();
     });
 
     iconSelectHandler.on('iconSelect', function() {
@@ -674,11 +981,11 @@ define(function(require, exports, module) {
         menuButton
     ]);
 
-
+    var footerMod = new StateModifier({
+        transform: Transform.translate(0, 0, 1000000000000)
+    });
     // layout.footer.add(tabBar);
-    layout.footer.add(new StateModifier({
-        transform: Transform.translate(0, 0, 100)
-    })).add(tabBar);
+    layout.footer.add(footerMod).add(tabBar);
 
     renderController.show(container);
     
@@ -703,4 +1010,6 @@ define(function(require, exports, module) {
     coverReset();
 
     mainContext.add(layout);
+
+    initialScale();
 });
