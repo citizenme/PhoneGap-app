@@ -102,8 +102,14 @@ p {
 .mirror.profile {
     background: transparent top left no-repeat url(../images/mirror/profile.png); background-size: cover;
 }
+.mirror.profile.hide {
+    display: none;
+}
 .lens.profile {
     background: transparent top left no-repeat url(../images/lenses/profile.png); background-size: cover;
+}
+.lens.profile.hide {
+    display: none;
 }
 .mirror.youtube.red {
     background: transparent top left no-repeat url(../images/mirror/youtube-red.png); background-size: cover;
@@ -111,9 +117,11 @@ p {
 .mirror.youtube.green {
     background: transparent top left no-repeat url(../images/mirror/youtube-green.png); background-size: cover;
 }
+.mirror.youtube.hide { display: none; }
 .lens.youtube {
     background: transparent top left no-repeat url(../images/lenses/youtube-lens.png); background-size: cover;
 }
+.lens.youtube.hide { display: none; }
 .mirror.facebook.red {
     background: transparent top left no-repeat url(../images/mirror/facebook-red.png); background-size: cover;
 }
@@ -123,6 +131,7 @@ p {
 .lens.facebook {
     background: transparent top left no-repeat url(../images/lenses/facebook-lens.png); background-size: cover;
 }
+.mirror.facebook.hide, .lens.facebook.hide { display: none;}
 .mirror.instagram.red {
     background: transparent top left no-repeat url(../images/mirror/instagram-red.png); background-size: cover;
 }
@@ -132,6 +141,7 @@ p {
 .lens.instagram {
     background: transparent top left no-repeat url(../images/lenses/instagram-lens.png); background-size: cover;
 }
+.mirror.instagram.hide, .lens.instagram.hide { display: none;}
 .mirror.tumblr.red {
     background: transparent top left no-repeat url(../images/mirror/tumblr-red.png); background-size: cover;
 }
@@ -141,6 +151,7 @@ p {
 .lens.tumblr {
     background: transparent top left no-repeat url(../images/lenses/tumblr-lens.png); background-size: cover;
 }
+.mirror.tumblr.hide, .lens.tumblr.hide { display: none;}
 .mirror.twitter.red {
     background: transparent top left no-repeat url(../images/mirror/twitter-red.png); background-size: cover;
 }
@@ -150,6 +161,7 @@ p {
 .lens.twitter {
     background: transparent top left no-repeat url(../images/lenses/twitter-lens.png); background-size: cover;
 }
+.mirror.twitter.hide, .lens.twitter.hide { display: none;}
 .mirror.linkedin.red {
     background: transparent top left no-repeat url(../images/mirror/linkedin-red.png); background-size: cover;
 }
@@ -159,6 +171,7 @@ p {
 .lens.linkedin {
     background: transparent top left no-repeat url(../images/lenses/linkedin-lens.png); background-size: cover;
 }
+.mirror.linkedin.hide, .lens.linkedin.hide { display: none;}
 .mirror.gplus.red {
     background: transparent top left no-repeat url(../images/mirror/gplus-red.png); background-size: cover;
 }
@@ -168,12 +181,14 @@ p {
 .lens.gplus {
     background: transparent top left no-repeat url(../images/lenses/gplus-lens.png); background-size: cover;
 }
+.mirror.gplus.hide, .lens.gplus.hide { display: none;}
 .mirror.citizenme {
     background: transparent top left no-repeat url(../images/mirror/citizenme-black.png); background-size: cover;
 }
 .lens.citizenme {
     background: transparent top left no-repeat url(../images/lenses/citizenme-lens.png); background-size: cover;
 }
+.mirror.citizenme.hide, .lens.citizenme.hide { display: none; }
 .mirror.dropbox.red {
     background: transparent top left no-repeat url(../images/mirror/dropbox-red.png); background-size: cover;
 }
@@ -183,6 +198,7 @@ p {
 .lens.dropbox {
     background: transparent top left no-repeat url(../images/lenses/dropbox-lens.png); background-size: cover;
 }
+.mirror.dropbox.hide, .lens.dropbox.hide { display: none; }
 .mirror.amazon.red {
     background: transparent top left no-repeat url(../images/mirror/amazon-red.png); background-size: cover;
 }
@@ -192,6 +208,7 @@ p {
 .lens.amazon {
     background: transparent top left no-repeat url(../images/lenses/amazon-lens.png); background-size: cover;
 }
+.mirror.amazon.hide, .lens.amazon.hide { display: none; }
 .mirror.apple.red {
     background: transparent top left no-repeat url(../images/mirror/apple-red.png); background-size: cover;
 }
@@ -201,6 +218,7 @@ p {
 .lens.apple {
     background: transparent top left no-repeat url(../images/lenses/apple-lens.png); background-size: cover;
 }
+.mirror.apple.hide, .lens.apple.hide { display: none; }
 .mirror.delicious.red {
     background: transparent top left no-repeat url(../images/mirror/delicious-red.png); background-size: cover;
 }
@@ -210,6 +228,7 @@ p {
 .lens.delicious {
     background: transparent top left no-repeat url(../images/lenses/delicious-lens.png); background-size: cover;
 }
+.mirror.delicious.hide, .lens.delicious.hide { display: none; }
 .mirror.duck.red {
     background: transparent top left no-repeat url(../images/mirror/duckduckgo-red.png); background-size: cover;
 }
@@ -219,6 +238,7 @@ p {
 .lens.duck {
     background: transparent top left no-repeat url(../images/lenses/duckduckgo-lens.png); background-size: cover;
 }
+.mirror.duck.hide, .lens.duck.hide { display: none; }
 .mirror.evernote.red {
     background: transparent top left no-repeat url(../images/mirror/evernote-red.png); background-size: cover;
 }
@@ -228,6 +248,7 @@ p {
 .lens.evernote {
     background: transparent top left no-repeat url(../images/lenses/evernote-lens.png); background-size: cover;
 }
+.mirror.evernote.hide, .lens.evernote.hide { display: none; }
 .mirror.flickr.red {
     background: transparent top left no-repeat url(../images/mirror/flickr-red.png); background-size: cover;
 }
@@ -237,6 +258,7 @@ p {
 .lens.flickr {
     background: transparent top left no-repeat url(../images/lenses/flickr-lens.png); background-size: cover;
 }
+.mirror.flickr.hide, .lens.flickr.hide { display: none; }
 .mirror.foursquare.red {
     background: transparent top left no-repeat url(../images/mirror/foursquare-red.png); background-size: cover;
 }
@@ -246,6 +268,7 @@ p {
 .lens.foursquare {
     background: transparent top left no-repeat url(../images/lenses/foursquare-lens.png); background-size: cover;
 }
+.mirror.foursquare.hide, .lens.foursquare.hide { display: none; }
 .mirror.github.red {
     background: transparent top left no-repeat url(../images/mirror/github-red.png); background-size: cover;
 }
@@ -255,6 +278,7 @@ p {
 .lens.github {
     background: transparent top left no-repeat url(../images/lenses/github-lens.png); background-size: cover;
 }
+.mirror.github.hide, .lens.github.hide { display: none; }
 .mirror.microsoft.red {
     background: transparent top left no-repeat url(../images/mirror/microsoft-red.png); background-size: cover;
 }
@@ -264,6 +288,7 @@ p {
 .lens.microsoft {
     background: transparent top left no-repeat url(../images/lenses/microsoft-lens.png); background-size: cover;
 }
+.mirror.microsoft.hide, .lens.microsoft.hide { display: none; }
 .mirror.myspace.red {
     background: transparent top left no-repeat url(../images/mirror/myspace-red.png); background-size: cover;
 }
@@ -273,6 +298,7 @@ p {
 .lens.myspace {
     background: transparent top left no-repeat url(../images/lenses/myspace-lens.png); background-size: cover;
 }
+.mirror.myspace.hide, .lens.myspace.hide { display: none; }
 .mirror.path.red {
     background: transparent top left no-repeat url(../images/mirror/path-red.png); background-size: cover;
 }
@@ -282,6 +308,7 @@ p {
 .lens.path {
     background: transparent top left no-repeat url(../images/lenses/path-lens.png); background-size: cover;
 }
+.mirror.path.hide, .lens.path.hide { display: none; }
 .mirror.pinterest.red {
     background: transparent top left no-repeat url(../images/mirror/pinterest-red.png); background-size: cover;
 }
@@ -291,6 +318,7 @@ p {
 .lens.pinterest {
     background: transparent top left no-repeat url(../images/lenses/pinterest-lens.png); background-size: cover;
 }
+.mirror.pinterest.hide, .lens.pinterest.hide { display: none; }
 .mirror.skype.red {
     background: transparent top left no-repeat url(../images/mirror/skype-red.png); background-size: cover;
 }
@@ -300,6 +328,7 @@ p {
 .lens.skype {
     background: transparent top left no-repeat url(../images/lenses/skype-lens.png); background-size: cover;
 }
+.mirror.skype.hide, .lens.skype.hide { display: none; }
 .mirror.soundcloud.red {
     background: transparent top left no-repeat url(../images/mirror/soundcloud-red.png); background-size: cover;
 }
@@ -309,6 +338,7 @@ p {
 .lens.soundcloud {
     background: transparent top left no-repeat url(../images/lenses/soundcloud-lens.png); background-size: cover;
 }
+.mirror.soundcloud.hide, .lens.soundcloud.hide { display: none; }
 .mirror.spotify.red {
     background: transparent top left no-repeat url(../images/mirror/spotify-red.png); background-size: cover;
 }
@@ -318,6 +348,7 @@ p {
 .lens.spotify {
     background: transparent top left no-repeat url(../images/lenses/spotify-lens.png); background-size: cover;
 }
+.mirror.spotify.hide, .lens.spotify.hide { display: none; }
 .mirror.wordpress.red {
     background: transparent top left no-repeat url(../images/mirror/wordpress-red.png); background-size: cover;
 }
@@ -327,6 +358,7 @@ p {
 .lens.wordpress {
     background: transparent top left no-repeat url(../images/lenses/wordpress-lens.png); background-size: cover;
 }
+.mirror.wordpress.hide, .lens.wordpress.hide { display: none; }
 .mirror.yahoo.red {
     background: transparent top left no-repeat url(../images/mirror/yahoo-red.png); background-size: cover;
 }
@@ -336,6 +368,7 @@ p {
 .lens.yahoo {
     background: transparent top left no-repeat url(../images/lenses/yahoo-lens.png); background-size: cover;
 }
+.mirror.yahoo.hide, .lens.yahoo.hide { display: none; }
 .mirror.yelp.red {
     background: transparent top left no-repeat url(../images/mirror/yelp-red.png); background-size: cover;
 }
@@ -345,6 +378,7 @@ p {
 .lens.yelp {
     background: transparent top left no-repeat url(../images/lenses/yelp-lens.png); background-size: cover;
 }
+.mirror.yelp.hide, .lens.yelp.hide { display: none; }
 .mirror.stumbledupon.red {
     background: transparent top left no-repeat url(../images/mirror/stumbledupon-red.png); background-size: cover;
 }
@@ -354,6 +388,7 @@ p {
 .lens.stumbledupon {
     background: transparent top left no-repeat url(../images/lenses/stumbledupon-lens.png); background-size: cover;
 }
+.mirror.stumbledupon.hide, .lens.stumbledupon.hide { display: none; }
 .mirror.twitpic.red {
     background: transparent top left no-repeat url(../images/mirror/twitpic-red.png); background-size: cover;
 }
@@ -363,9 +398,11 @@ p {
 .lens.twitpic {
     background: transparent top left no-repeat url(../images/lenses/twitpic-lens.png); background-size: cover;
 }
+.mirror.twitpic.hide, .lens.twitpic.hide { display: none; }
 
 /* Lense Icons */
 .profile-icon { background:  transparent top left no-repeat url(../images/icons/settings-bubble-flat.png); background-size: cover; }
+.profile-icon.off { display: none; }
 .linkedin + .profile-icon { left: 38px; top: -115px; }
 .youtube + .profile-icon { top: -72px; left: -10px; }
 .facebook + .profile-icon { top: -80px; left: 26px; }

@@ -28,6 +28,7 @@ define(function(require, exports, module) {
     var SpringTransition    = require("famous/transitions/SpringTransition");
     var EventHandler        = require('famous/core/EventHandler');
     var ToggleCircle        = require('./ToggleCircle');
+    var MirrorLens          = require('./MirrorLens');
     //var ToggleButton        = require('./ToggleButton');
     
     Transitionable.registerMethod('spring', SpringTransition);
@@ -48,7 +49,7 @@ define(function(require, exports, module) {
         snapY: 0, 
         xRange: [-2000, 2000],
         yRange: [-2000, 2000],
-        scale: 0.1
+        scale: 0.15
     });
     
     var windowWidth = window.innerWidth;
@@ -93,7 +94,8 @@ define(function(require, exports, module) {
     });
 
     var footerTranslateModifier = new StateModifier({
-         align: [0,1]
+         align: [0,1],
+         transform: Transform.scale(1, 1, 1)
     });
     
     var layout = new HeaderFooterLayout({ headerSize: 44, footerSize: 50 });
@@ -150,13 +152,13 @@ define(function(require, exports, module) {
     //--------------------------------------------------------//
     //---- Circle Surfaces -----------------------------------//
     //--------------------------------------------------------//
-    var profile_circle = new ToggleCircle({
+    var profile_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','profile'],
         offClasses: ['mirror', 'profile']
     });
-    var youtube_circle = new ToggleCircle({
+    var youtube_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','youtube'],
@@ -165,7 +167,7 @@ define(function(require, exports, module) {
     var youtubePosMod = new StateModifier({
         origin: [0.545, 0.331]
     });
-    var facebook_circle = new ToggleCircle({
+    var facebook_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','facebook'],
@@ -174,7 +176,7 @@ define(function(require, exports, module) {
     var facebookPosMod = new StateModifier({
         origin: [0.375, 0.375]
     });
-    var instagram_circle = new ToggleCircle({
+    var instagram_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','instagram'],
@@ -184,7 +186,7 @@ define(function(require, exports, module) {
     var instagramPosMod = new StateModifier({
         origin: [0.625, 0.625]
     });
-    var tumblr_circle = new ToggleCircle({
+    var tumblr_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','tumblr'],
@@ -193,7 +195,7 @@ define(function(require, exports, module) {
     var tumblrPosMod = new StateModifier({
         origin: [0.454, 0.671]
     });
-    var twitter_circle = new ToggleCircle({
+    var twitter_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','twitter'],
@@ -202,7 +204,7 @@ define(function(require, exports, module) {
     var twitterPosMod = new StateModifier({
         origin: [0.670, 0.454]
     });
-    var linkedin_circle = new ToggleCircle({
+    var linkedin_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','linkedin'],
@@ -211,7 +213,7 @@ define(function(require, exports, module) {
     var linkedinPosMod = new StateModifier({
         origin: [0.33, 0.545]
     });
-    var gplus_circle = new ToggleCircle({
+    var gplus_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','gplus'],
@@ -220,7 +222,7 @@ define(function(require, exports, module) {
     var gplusPosMod = new StateModifier({
         origin: [0.792, 0.58]
     });
-    var citizenme_circle = new ToggleCircle({
+    var citizenme_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','citizenme'],
@@ -229,7 +231,7 @@ define(function(require, exports, module) {
     var citizenmePosMod = new StateModifier({
         origin: [0.205, 0.42]
     });
-    var dropbox_circle = new ToggleCircle({
+    var dropbox_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','dropbox'],
@@ -238,7 +240,7 @@ define(function(require, exports, module) {
     var dropboxPosMod = new StateModifier({
         origin: [0.715, 0.285]
     });
-    var amazon_circle = new ToggleCircle({
+    var amazon_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','amazon'],
@@ -247,7 +249,7 @@ define(function(require, exports, module) {
     var amazonPosMod = new StateModifier({
         origin: [0.252, 0.249]
     });
-    var apple_circle = new ToggleCircle({
+    var apple_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','apple'],
@@ -256,7 +258,7 @@ define(function(require, exports, module) {
     var applePosMod = new StateModifier({
         origin: [0.423, 0.205]
     });
-    var delicious_circle = new ToggleCircle({
+    var delicious_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','delicious'],
@@ -265,7 +267,7 @@ define(function(require, exports, module) {
     var deliciousPosMod = new StateModifier({
         origin: [0.592, 0.160]
     });
-    var duck_circle = new ToggleCircle({
+    var duck_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','duck'],
@@ -274,7 +276,7 @@ define(function(require, exports, module) {
     var duckPosMod = new StateModifier({
         origin: [0.761, 0.115]
     });
-    var evernote_circle = new ToggleCircle({
+    var evernote_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','evernote'],
@@ -283,7 +285,7 @@ define(function(require, exports, module) {
     var evernotePosMod = new StateModifier({
         origin: [0.885, 0.240]
     });
-    var flickr_circle = new ToggleCircle({
+    var flickr_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','flickr'],
@@ -292,7 +294,7 @@ define(function(require, exports, module) {
     var flickrPosMod = new StateModifier({
         origin: [0.840, 0.410]
     });
-    var foursquare_circle = new ToggleCircle({
+    var foursquare_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','foursquare'],
@@ -301,7 +303,7 @@ define(function(require, exports, module) {
     var foursquarePosMod = new StateModifier({
         origin: [0.962, 0.535]
     });
-    var github_circle = new ToggleCircle({
+    var github_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','github'],
@@ -310,7 +312,7 @@ define(function(require, exports, module) {
     var githubPosMod = new StateModifier({
         origin: [0.082, 0.295]
     });
-    var microsoft_circle = new ToggleCircle({
+    var microsoft_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','microsoft'],
@@ -319,7 +321,7 @@ define(function(require, exports, module) {
     var microsoftPosMod = new StateModifier({
         origin: [0.126, 0.125]
     });
-    var myspace_circle = new ToggleCircle({
+    var myspace_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','myspace'],
@@ -328,7 +330,7 @@ define(function(require, exports, module) {
     var myspacePosMod = new StateModifier({
         origin: [0.296, 0.080]
     });
-    var path_circle = new ToggleCircle({
+    var path_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','path'],
@@ -337,7 +339,7 @@ define(function(require, exports, module) {
     var pathPosMod = new StateModifier({
         origin: [0.465, 0.040]
     });
-    var pinterest_circle = new ToggleCircle({
+    var pinterest_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','pinterest'],
@@ -346,7 +348,7 @@ define(function(require, exports, module) {
     var pinterestPosMod = new StateModifier({
         origin: [0.035, 0.465]
     });
-    var skype_circle = new ToggleCircle({
+    var skype_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','skype'],
@@ -355,7 +357,7 @@ define(function(require, exports, module) {
     var skypePosMod = new StateModifier({
         origin: [0.160, 0.590]
     });
-    var soundcloud_circle = new ToggleCircle({
+    var soundcloud_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','soundcloud'],
@@ -364,7 +366,7 @@ define(function(require, exports, module) {
     var soundcloudPosMod = new StateModifier({
         origin: [0.284, 0.715]
     });
-    var spotify_circle = new ToggleCircle({
+    var spotify_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','spotify'],
@@ -373,7 +375,7 @@ define(function(require, exports, module) {
     var spotifyPosMod = new StateModifier({
         origin: [0.580, 0.795]
     });
-    var wordpress_circle = new ToggleCircle({
+    var wordpress_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','wordpress'],
@@ -382,7 +384,7 @@ define(function(require, exports, module) {
     var wordpressPosMod = new StateModifier({
         origin: [0.750, 0.75]
     });
-    var yahoo_circle = new ToggleCircle({
+    var yahoo_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','yahoo'],
@@ -391,7 +393,7 @@ define(function(require, exports, module) {
     var yahooPosMod = new StateModifier({
         origin: [0.41, 0.84]
     });
-    var yelp_circle = new ToggleCircle({
+    var yelp_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','yelp'],
@@ -400,7 +402,7 @@ define(function(require, exports, module) {
     var yelpPosMod = new StateModifier({
         origin: [0.115, 0.755]
     });
-    var stumbledupon_circle = new ToggleCircle({
+    var stumbledupon_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','stumbledupon'],
@@ -409,7 +411,7 @@ define(function(require, exports, module) {
     var stumbleduponPosMod = new StateModifier({
         origin: [0.915, 0.705]
     });
-    var twitpic_circle = new ToggleCircle({
+    var twitpic_circle = new MirrorLens({
         size: [300, 300],
         content: '',
         onClasses: ['lens','twitpic'],
@@ -462,24 +464,13 @@ define(function(require, exports, module) {
 
     eventHandlerCircle.pipe(eventHandlerSelectCircle);
     
-    // Scale Sync event functions
-    scaleSync.on("start", function() {
-        start++;
-    });
-
-    scaleSync.on("update", function(data) {
-        update++;
-        growShrink = data.velocity > 0 ? "Growing" : "Shrinking";
-        scale = data.scale;
-        
-    });
+   
     function initialScale() {
         
          containerScaleModifier.setTransform(
             Transform.scale(isWideScreen ? 0.4 : 0.15, isWideScreen ? 0.4 : 0.15, 1),
             {curve: Easing.inCirc, duration : 500 }
         );
-       
         
     };
     function scaleUp() {
@@ -509,6 +500,18 @@ define(function(require, exports, module) {
         });
     };
 
+     // Scale Sync event functions
+    scaleSync.on("start", function() {
+        start++;
+    });
+
+    scaleSync.on("update", function(data) {
+        update++;
+        growShrink = data.velocity > 0 ? "Growing" : "Shrinking";
+        scale = data.scale;
+        
+    });
+
     scaleSync.on("end", function() {
         end++;
         
@@ -529,21 +532,22 @@ define(function(require, exports, module) {
                 //     newScale = 9.5;
                 // }
             }
-        }else {
-            newScale = scale;
         }
         modifier.setTransform(
             Transform.scale(newScale, newScale, 1),
-            {curve: Easing.inCirc, duration : 500 }
+            {curve: Easing.inCirc, duration : 200 },
+            function() { 
+                if (newScale < 4) {
+                    eventHandlerSelectCircle.emit('deselectCircle');
+                }else if (newScale >= 4) {
+                    eventHandlerSelectCircle.emit('selectCircle');
+                }
+            }
         );
-        footerMod.setTransform({
-            transform: Transform.translate(0, 0, 1000000000000)
-        });
-        if (newScale == 1) {
-            eventHandlerSelectCircle.emit('deselectCircle');
-        }else if (newScale > 2) {
-            eventHandlerSelectCircle.emit('selectCircle');
-        }
+        // footerMod.setTransform({
+        //     transform: Transform.translate(0, 0, 1000000000000)
+        // });
+        
           
     });
     
@@ -985,7 +989,7 @@ define(function(require, exports, module) {
         transform: Transform.translate(0, 0, 1000000000000)
     });
     // layout.footer.add(tabBar);
-    layout.footer.add(footerMod).add(tabBar);
+    layout.footer.add(tabBar);
 
     renderController.show(container);
     
@@ -1000,10 +1004,44 @@ define(function(require, exports, module) {
       }
     }));
 
-    feedbackButton.on("click", function() {  headerSurface.setContent('FeedBack'); mirrorButton.deselect(); servicesButton.deselect(); menuButton.deselect(); });
-    mirrorButton.on("click", function() { renderController.show(container); headerSurface.setContent('Mirror');  feedbackButton.deselect(); servicesButton.deselect(); menuButton.deselect(); });
-    servicesButton.on("click", function() { renderController.show(servicesContainer); headerSurface.setContent('Services'); mirrorButton.deselect(); feedbackButton.deselect(); menuButton.deselect(); });
-    menuButton.on("click", function() {  headerSurface.setContent('Menu'); mirrorButton.deselect(); servicesButton.deselect(); feedbackButton.deselect(); });
+    feedbackButton.on("click", function() {  
+
+        headerSurface.setContent('FeedBack'); 
+        mirrorButton.deselect(); 
+        servicesButton.deselect(); 
+        menuButton.deselect();
+         ;
+    });
+    mirrorButton.on("click", function() { 
+
+        renderController.show(container); 
+        headerSurface.setContent('Mirror');  
+        feedbackButton.deselect(); 
+        servicesButton.deselect(); 
+        menuButton.deselect();
+
+    });
+    servicesButton.on("click", function() { 
+
+        renderController.show(servicesContainer); 
+        headerSurface.setContent('Services'); 
+        mirrorButton.deselect(); 
+        feedbackButton.deselect(); 
+        menuButton.deselect();
+        
+    });
+    menuButton.on("click", function() {  
+
+        headerSurface.setContent('Menu'); 
+        mirrorButton.deselect(); 
+        servicesButton.deselect(); 
+        feedbackButton.deselect();
+
+    });
+
+    Engine.on('resize', function() {
+        coverReset();
+    });
     
     mirrorButton.select();
 

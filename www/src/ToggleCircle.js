@@ -62,6 +62,8 @@ define(function(require, exports, module) {
         }.bind(this));
         this.offSurface.pipe(this._eventOutput);
 
+        
+
         this.onSurface = new ContainerSurface();
         // this.onSurface.on('click', function() {
         //     if (this.options.toggleMode !== ToggleButton.ON) this.deselect();
