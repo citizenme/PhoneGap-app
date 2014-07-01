@@ -26,7 +26,7 @@ define(function(require, exports, module) {
 
         this.lens = new Surface({ classes: onClasses, size: [300, 300] }); 
         this.add(this.lens);
-        this.lens.pipe(this._eventOutput);
+        //this.lens.pipe(this._eventOutput);
 
         this.mirror = new Surface({ classes: offClasses, size: [300, 300] }); 
         this.add(this.mirror);

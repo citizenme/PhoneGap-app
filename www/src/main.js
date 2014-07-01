@@ -22,7 +22,7 @@ define(function(require, exports, module) {
     var ScaleSync           = require("famous/inputs/ScaleSync");
     var Easing              = require('famous/transitions/Easing');
     var Transitionable      = require("famous/transitions/Transitionable");
-    var Draggable           = require("famous/modifiers/Draggable");
+    var Draggable           = require('famous/modifiers/Draggable');
     var MyDraggable         = require("./MyDraggable");
     var SnapTransition      = require("famous/transitions/SnapTransition");
     var SpringTransition    = require("famous/transitions/SpringTransition");
@@ -49,8 +49,19 @@ define(function(require, exports, module) {
         snapY: 0, 
         xRange: [-2000, 2000],
         yRange: [-2000, 2000],
+        scale: 1.0
+    });
+    // Draggable Object Parameters
+    var zoomDraggable = new MyDraggable({
+        snapX: 0, 
+        snapY: 0, 
+        xRange: [-2000, 2000],
+        yRange: [-2000, 2000],
         scale: 0.15
     });
+    var hasPinched = 0;
+    var hasZoomed = 0;
+    var zoomState = "zoomedOut";
     
     var windowWidth = window.innerWidth;
     var isWideScreen;
@@ -458,12 +469,18 @@ define(function(require, exports, module) {
     Engine.pipe(scaleSync);
     // ScaleSync Pipe Event
     Engine.pipe(draggable);
+    Engine.pipe(zoomDraggable);
 
     var eventHandlerCircle = new EventHandler();
     var eventHandlerSelectCircle = new EventHandler();
 
     eventHandlerCircle.pipe(eventHandlerSelectCircle);
     
+    function modifyDraggable() {
+        console.log('toggle');
+        draggable.toggle();
+        zoomDraggable.toggle();
+    }
    
     function initialScale() {
         
@@ -485,9 +502,13 @@ define(function(require, exports, module) {
                 {curve: Easing.inCirc, duration : 500 }
             );
         }
-        footerMod.setTransform({
-            transform: Transform.translate(0, 0, 1000000000000)
-        });
+        if(zoomState === "zoomedIn") {
+            return;
+        }else {
+            modifyDraggable();
+            zoomState = "zoomedIn"
+        }
+
     };
     function scaleDown() {
 
@@ -495,9 +516,13 @@ define(function(require, exports, module) {
             Transform.scale(1.0, 1.0, 1),
             {curve: Easing.inCirc, duration : 500 }
         );
-        footerMod.setTransform({
-            transform: Transform.translate(0, 0, 1000000000000)
-        });
+        if(zoomState === "zoomedOut"){
+            return;
+        }else {
+            modifyDraggable();
+            zoomState = "zoomedOut";
+        }
+
     };
 
      // Scale Sync event functions
@@ -518,6 +543,7 @@ define(function(require, exports, module) {
         if (update > 0) {
             if (scale < 1){
                 newScale = 1;
+                
                 //eventHandlerSelectCircle.emit('deselectCircle');
                 // newScale = newScale - (2 + scale);
                 // if(newScale < 1){
@@ -539,11 +565,26 @@ define(function(require, exports, module) {
             function() { 
                 if (newScale < 4) {
                     eventHandlerSelectCircle.emit('deselectCircle');
+                    if(zoomState === "zoomedOut"){
+                        return;
+                    }else {
+                        modifyDraggable();
+                        zoomState = "zoomedOut";
+                    }
+                    
                 }else if (newScale >= 4) {
                     eventHandlerSelectCircle.emit('selectCircle');
+                    if(zoomState === "zoomedIn") {
+                        return;
+                    }else {
+                        modifyDraggable();
+                        zoomState = "zoomedIn"
+                    }
+                    
                 }
             }
         );
+       
         // footerMod.setTransform({
         //     transform: Transform.translate(0, 0, 1000000000000)
         // });
@@ -627,7 +668,9 @@ define(function(require, exports, module) {
     
     layout.content.add(backgroundSurface);
 
-    layout.content.add(modifier).add(draggable).add(containerScaleModifier).add(container);
+    layout.content.add(modifier).add(draggable).add(zoomDraggable).add(containerScaleModifier).add(container);
+
+    zoomDraggable.toggle();
 
     layout.content.add(coverDrag).add(coverSurface);
 

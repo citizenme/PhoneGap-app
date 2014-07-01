@@ -33,8 +33,8 @@ define(function(require, exports, module) {
      *    Draggable._direction.y to constrain to one axis.
      *
      */
-    function Draggable(options) {
-        this.options = Object.create(Draggable.DEFAULT_OPTIONS);
+    function MyDraggable(options) {
+        this.options = Object.create(MyDraggable.DEFAULT_OPTIONS);
         if (options) this.setOptions(options);
 
         this._positionState = new Transitionable([0,0]);
@@ -55,12 +55,12 @@ define(function(require, exports, module) {
         y : 0x02          //010
     };
 
-    Draggable.DIRECTION_X = _direction.x;
-    Draggable.DIRECTION_Y = _direction.y;
+    MyDraggable.DIRECTION_X = _direction.x;
+    MyDraggable.DIRECTION_Y = _direction.y;
 
     var _clamp = Utilities.clamp;
 
-    Draggable.DEFAULT_OPTIONS = {
+    MyDraggable.DEFAULT_OPTIONS = {
         projection  : _direction.x | _direction.y,
         scale       : 0.1,
         xRange      : null,
@@ -141,7 +141,7 @@ define(function(require, exports, module) {
      *
      * @param {Object} [options] overrides of default options.  See constructor.
      */
-    Draggable.prototype.setOptions = function setOptions(options) {
+    MyDraggable.prototype.setOptions = function setOptions(options) {
         var currentOptions = this.options;
         if (options.projection !== undefined) {
             var proj = options.projection;
@@ -164,7 +164,7 @@ define(function(require, exports, module) {
      *
      * @return {array<number>} [x, y] position delta from start.
      */
-    Draggable.prototype.getPosition = function getPosition() {
+    MyDraggable.prototype.getPosition = function getPosition() {
         return this._positionState.get();
     };
 
@@ -179,7 +179,7 @@ define(function(require, exports, module) {
      * @param {transition} transition transition object specifying how object moves to new position
      * @param {function} callback zero-argument function to call on observed completion
      */
-    Draggable.prototype.setRelativePosition = function setRelativePosition(position, transition, callback) {
+    MyDraggable.prototype.setRelativePosition = function setRelativePosition(position, transition, callback) {
         var currPos = this.getPosition();
         var relativePosition = [currPos[0] + position[0], currPos[1] + position[1]];
         this.setPosition(relativePosition, transition, callback);
@@ -195,7 +195,7 @@ define(function(require, exports, module) {
      * @param {transition} transition transition object specifying how object moves to new position
      * @param {function} callback zero-argument function to call on observed completion
      */
-    Draggable.prototype.setPosition = function setPosition(position, transition, callback) {
+    MyDraggable.prototype.setPosition = function setPosition(position, transition, callback) {
         if (this._positionState.isActive()) this._positionState.halt();
         this._positionState.set(position, transition, callback);
     };
@@ -206,7 +206,7 @@ define(function(require, exports, module) {
      * @method activate
      *
      */
-    Draggable.prototype.activate = function activate() {
+    MyDraggable.prototype.activate = function activate() {
         this._active = true;
     };
 
@@ -216,7 +216,7 @@ define(function(require, exports, module) {
      * @method deactivate
      *
      */
-    Draggable.prototype.deactivate = function deactivate() {
+    MyDraggable.prototype.deactivate = function deactivate() {
         this._active = false;
     };
 
@@ -226,7 +226,7 @@ define(function(require, exports, module) {
      * @method toggle
      *
      */
-    Draggable.prototype.toggle = function toggle() {
+    MyDraggable.prototype.toggle = function toggle() {
         this._active = !this._active;
     };
 
@@ -242,7 +242,7 @@ define(function(require, exports, module) {
      * @return {Object} render spec for this Modifier, including the
      *    provided target
      */
-    Draggable.prototype.modify = function modify(target) {
+    MyDraggable.prototype.modify = function modify(target) {
         var pos = this.getPosition();
         return {
             transform: Transform.translate(pos[0], pos[1]),
@@ -250,5 +250,5 @@ define(function(require, exports, module) {
         };
     };
 
-    module.exports = Draggable;
+    module.exports = MyDraggable;
 });
