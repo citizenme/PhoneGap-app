@@ -30,6 +30,18 @@ Tech - facebookjs:
 Proof of concept (POC) investigation using Facebook's JavaScript API with
 Cordova without using any native plugins on the desire platform. Work successfully on iOS, Android and FireFox OS.
 
+Licensing:
+--------
+The code and files provided by citizenme in this Git repository is provided under the Apache License, Version 2.0.
+
+famo.us is licensed under the Mozilla Public License, Version 2.0.
+
+jquery mobile is licensed under the MIT license.
+
+Apache Cordova is licensed under the Apache License, Version 2.0.
+
+The Ionic Framework is licensed under the MIT license.
+
 Social Networks:
 -----------------
 
